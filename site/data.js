@@ -1,0 +1,80 @@
+// Feladatbank. Minden tételt tanítónak kell átnéznie élesítés előtt.
+// w = helyes alak, x = hibás alak (ha nincs megadva, j <-> ly cserével képezzük), h = magyarázat.
+const TOPICS = {
+  jly: {
+    name: "j vagy ly",
+    short: "j / ly",
+    tip: "A j és az ly ugyanúgy hangzik, ezért a szavakat meg kell tanulni. Segít a szócsalád: folyik → folyó, folyosó.",
+    items: [
+      { w: "golyó", h: "Golyó, golyóstoll: ly-os szócsalád." },
+      { w: "tojás", h: "Tojás: j-vel írjuk." },
+      { w: "papagáj", h: "Papagáj: a szó végén j áll." },
+      { w: "király", h: "Király, királynő, királyság: ly-os szócsalád." },
+      { w: "hajó", h: "Hajó, hajós: j-vel írjuk." },
+      { w: "folyosó", h: "Folyik → folyó → folyosó: ly-os szócsalád." },
+      { w: "ajtó", h: "Ajtó: j-vel írjuk." },
+      { w: "sirály", h: "Sirály: a szó végén ly áll." },
+      { w: "mosoly", h: "Mosoly, mosolyog: ly-os szócsalád." },
+      { w: "fejsze", h: "Fejsze: j-vel írjuk." },
+      { w: "gólya", h: "Gólya: ly-nal írjuk." },
+      { w: "száj", h: "Száj: a szó végén j áll." },
+      { w: "korcsolya", h: "Korcsolya, korcsolyázik: ly-os szócsalád." },
+      { w: "tej", h: "Tej, tejföl: j-vel írjuk." },
+      { w: "kastély", h: "Kastély: a szó végén ly áll." },
+      { w: "majom", h: "Majom: j-vel írjuk." },
+      { w: "pálya", h: "Pálya, focipálya: ly-nal írjuk." },
+      { w: "sajt", h: "Sajt: j-vel írjuk." },
+    ],
+  },
+  mgh: {
+    name: "Hosszú vagy rövid magánhangzó",
+    short: "i/í, o/ó, ö/ő, u/ú, ü/ű",
+    tip: "Ejtsd ki lassan, és figyeld, meddig tart a hang! A hosszú hangot jobban elnyújtjuk.",
+    items: [
+      { w: "kút", x: "kut", h: "Kút: hosszú ú." },
+      { w: "tűz", x: "tüz", h: "Tűz: hosszú ű." },
+      { w: "víz", x: "viz", h: "Víz: hosszú í." },
+      { w: "fű", x: "fü", h: "Fű: hosszú ű." },
+      { w: "óra", x: "ora", h: "Óra: hosszú ó." },
+      { w: "cipő", x: "cipö", h: "Cipő: a szó végén hosszú ő." },
+      { w: "erdő", x: "erdö", h: "Erdő: a szó végén hosszú ő." },
+      { w: "húsz", x: "husz", h: "Húsz: hosszú ú." },
+      { w: "tanító", x: "tanitó", h: "Tanító: rövid i, hosszú ó." },
+      { w: "virág", x: "vírág", h: "Virág: rövid i." },
+      { w: "kosár", x: "kósár", h: "Kosár: rövid o, hosszú á." },
+      { w: "iskola", x: "iskóla", h: "Iskola: rövid o." },
+      { w: "tükör", x: "tűkör", h: "Tükör: rövid ü." },
+      { w: "üveg", x: "űveg", h: "Üveg: rövid ü." },
+      { w: "csütörtök", x: "csűtörtök", h: "Csütörtök: rövid ü." },
+      { w: "piros", x: "píros", h: "Piros: rövid i." },
+    ],
+  },
+  msh: {
+    name: "Hosszú vagy rövid mássalhangzó",
+    short: "l/ll, t/tt, ny/nny…",
+    tip: "A hosszú mássalhangzónál a hangot kicsit tovább tartjuk: csil-lag, reg-gel. A kétjegyű betűnél csak az első betűt kettőzzük: nny, ssz, tty.",
+    items: [
+      { w: "csillag", x: "csilag", h: "Csillag: hosszú ll." },
+      { w: "lassan", x: "lasan", h: "Lassan: hosszú ss." },
+      { w: "reggel", x: "regel", h: "Reggel: hosszú gg." },
+      { w: "kettő", x: "kető", h: "Kettő: hosszú tt." },
+      { w: "itt", x: "it", h: "Itt: hosszú tt." },
+      { w: "állat", x: "álat", h: "Állat: hosszú ll." },
+      { w: "mellett", x: "melett", h: "Mellett: hosszú ll és hosszú tt." },
+      { w: "hosszú", x: "hoszú", h: "Hosszú: ssz (a kétjegyű sz-ből csak az s duplázódik)." },
+      { w: "könnyű", x: "könyű", h: "Könnyű: nny (az ny-ből csak az n duplázódik)." },
+      { w: "dinnye", x: "dinye", h: "Dinnye: nny." },
+      { w: "hattyú", x: "hatyú", h: "Hattyú: tty (a ty-ből csak a t duplázódik)." },
+      { w: "ebéd", x: "ebbéd", h: "Ebéd: rövid b." },
+      { w: "kalap", x: "kallap", h: "Kalap: rövid l." },
+      { w: "vacsora", x: "vaccsora", h: "Vacsora: rövid cs." },
+      { w: "nagyon", x: "naggyon", h: "Nagyon: rövid gy." },
+      { w: "tulipán", x: "tullipán", h: "Tulipán: rövid l." },
+    ],
+  },
+};
+
+function wrongOf(topicKey, item) {
+  if (item.x) return item.x;
+  return item.w.includes("ly") ? item.w.replace("ly", "j") : item.w.replace("j", "ly");
+}

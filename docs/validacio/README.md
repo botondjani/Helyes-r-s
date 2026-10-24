@@ -23,7 +23,14 @@ A cél: **fejlesztés előtt** kideríteni, van-e elég kereslet és fizetési h
 - [ ] Az interjú-összesítő kitöltése → **0. kapu, nov. 7.**
 
 ### 3. hét (nov. 9. – 15.)
-- [x] Ingyenes j/ly mini-gyakorló „értesíts” gombbal (vázlat kész) → [`site/`](../../site/)
+- [x] Ingyenes értékcsomag a feliratkozás előtt (kész) → [`site/`](../../site/):
+  - **5 perces helyesírás-felmérő** (15 feladat, 3 témából) témánkénti eredménnyel és tanáccsal
+  - **Nyomtatható 7 napos gyakorlóterv** a leggyengébb témára
+  - **3 téma gyakorlója:** j/ly, hosszú-rövid magánhangzó, hosszú-rövid mássalhangzó
+  - **Tollbamondás felolvasással** (a készülék magyar hangjával)
+  - **Nyomtatható feladatlapok** megoldókulccsal
+  - **Ismétlés 1, 3 és 7 nap múlva** a rontott szavakra (a böngészőben tárolva)
+  - Feliratkozási ajánlat: **heti 1 új nyomtatható feladatlap ingyen + indulási kedvezmény**
 - [ ] **Te:** a domain megvásárlása, a várólista-űrlap létrehozása, élesítés (Cloudflare Pages)
 - [ ] 3 SEO-oldal élesítése (az első: [`site/j-vagy-ly/`](../../site/j-vagy-ly/))
 
@@ -33,7 +40,10 @@ A cél: **fejlesztés előtt** kideríteni, van-e elég kereslet és fizetési h
 - [ ] Hasznos posztok szülői csoportokban (szöveg: interjú-útmutató, „C” sablon)
 - [ ] **1. kapu, dec. 5.**
 
+## Vállalás a feliratkozóknak
+A „heti 1 új feladatlap” ígéretet teljesíteni kell: a feladatlap-generátorral 10 perc/hét, kiküldés a várólista-eszközből vagy e-mailben. **6 hétre előre elkészíthető.**
+
 ## Mérés (backend nélkül, a validációhoz)
 - **Látogatók:** Cloudflare Web Analytics (sütimentes).
-- **Gombkattintás:** a „Teljes csomag, értesíts” gomb a várólista-űrlapra visz. Az **űrlapmegnyitások** száma ÷ a mini-gyakorlót befejezők száma = kattintási arány. Az űrlap saját statisztikája mutatja a megnyitásokat.
+- **Gombkattintás:** a „Feliratkozom” gomb a várólista-űrlapra visz. Az **űrlapmegnyitások** száma ÷ a felmérőt vagy gyakorlást befejezők száma (közelítés: az eredményoldal megtekintései) = kattintási arány. Az űrlap saját statisztikája mutatja a megnyitásokat.
 - **Feliratkozók:** a várólista-űrlap beküldései.

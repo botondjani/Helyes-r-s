@@ -59,3 +59,39 @@ button.ghost { background: transparent; border: 2px solid var(--line); border-ra
 body.dys { font-family: Verdana, Tahoma, Arial, sans-serif; font-size: 20px; line-height: 1.8; letter-spacing: 0.06em; word-spacing: 0.16em; background: #fdf6e3; }
 body.dys .word { font-size: 52px; letter-spacing: 0.14em; }
 body.dys .card { background: #fffbef; }
+
+/* --- 2. változat: kezdőlap, felmérő, nyomtatás --- */
+.muted { color: var(--muted); }
+.between { justify-content: space-between; }
+.ask { text-align: center; font-weight: 600; font-size: 20px; }
+.highlight { border-color: var(--accent); background: #eff6ff; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+.topic { margin: 0; display: flex; flex-direction: column; }
+.topic h3 { margin: 0 0 4px; font-size: 19px; }
+.topic .row { margin-top: auto; }
+.wrapbtns { justify-content: flex-start; gap: 8px; }
+.wrapbtns button { font-size: 15px; padding: 8px 12px; }
+.choice { font-size: 26px; min-width: 140px; }
+#dictForm { margin-top: 12px; }
+#dictInput { font-size: 26px; padding: 10px 14px; border: 2px solid var(--line); border-radius: var(--radius); width: min(320px, 100%); text-align: center; }
+.bar { margin: 10px 0; }
+.barlabel { display: flex; justify-content: space-between; font-weight: 600; }
+.bartrack { height: 14px; background: #eef2f7; border-radius: 99px; overflow: hidden; }
+.barfill { height: 100%; }
+.barfill.low { background: #f87171; } .barfill.mid { background: #fbbf24; } .barfill.high { background: #34d399; }
+.sheet { background: #fff; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); margin-top: 12px; }
+.sheet h1 { font-size: 24px; }
+.tipbox { background: #f1f5f9; padding: 10px 14px; border-radius: 10px; }
+.cols2 { columns: 2; column-gap: 32px; }
+.tasks li { margin: 10px 0; font-size: 20px; }
+.lines li { border-bottom: 1px solid #94a3b8; height: 36px; }
+.plan { width: 100%; border-collapse: collapse; }
+.plan th, .plan td { border: 1px solid #cbd5e1; padding: 8px; text-align: left; }
+.plan td:last-child { width: 70px; }
+@media print {
+  body { background: #fff; font-size: 14pt; letter-spacing: normal; }
+  .noprint, header, footer { display: none !important; }
+  .sheet { border: 0; padding: 0; }
+  .pagebreak { page-break-after: always; }
+}
