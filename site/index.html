@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>j vagy ly gyakorló: 10 ingyenes feladat gyerekeknek | Betűvadász</title>
+<meta name="description" content="Ingyenes j/ly gyakorló alsó és felső tagozatosoknak: 10 feladat azonnali visszajelzéssel, felolvasással és diszgráfia-barát nézettel. Reklám nélkül.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap">
+  <a class="logo" href="./">Betűvadász</a>
+  <label class="toggle"><input type="checkbox" id="dys"> Diszgráfia-barát nézet</label>
+</header>
+
+<main class="wrap">
+  <h1>j vagy ly? Gyakorolj 10 feladattal!</h1>
+  <p class="lead">Válaszd ki, melyik betű hiányzik. Minden válasz után megmutatjuk a helyes szót, és meg is hallgathatod.</p>
+
+  <section id="quiz" class="card" aria-live="polite">
+    <div class="progress"><span id="pos">1</span> / <span id="total">10</span></div>
+    <p class="word" id="word">go_ó</p>
+    <div class="choices">
+      <button class="choice" data-v="j">j</button>
+      <button class="choice" data-v="ly">ly</button>
+    </div>
+    <p id="feedback" class="feedback"></p>
+    <div class="row">
+      <button id="speak" class="ghost" hidden>🔊 Meghallgatom</button>
+      <button id="next" class="primary" hidden>Tovább</button>
+    </div>
+  </section>
+
+  <section id="result" class="card" hidden>
+    <h2>Eredmény: <span id="score"></span> / 10</h2>
+    <p id="praise"></p>
+    <h3>Ezeket érdemes még gyakorolni:</h3>
+    <ul id="mistakes"></ul>
+    <button id="again" class="ghost">Újrakezdem</button>
+
+    <div class="offer">
+      <h3>Teljes csomag: minden helyesírási szabály, 1–8. osztály</h3>
+      <ul>
+        <li>Napi 5 perces adagok, a gyerek saját hibáira építve</li>
+        <li>Tollbamondás felolvasással</li>
+        <li>Diszgráfia-barát mód</li>
+        <li>Szülői összesítő, reklám nélkül</li>
+      </ul>
+      <p class="price"><strong>6990 Ft, egyszer fizetsz, örökre, az egész családnak</strong></p>
+      <p>Még fejlesztjük. Ha szólunk, amikor elkészül, <strong>indulási kedvezményt</strong> kapsz.</p>
+      <a id="waitlist" class="primary big" href="#" rel="noopener">Kérek értesítést</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Miért nehéz a j és az ly?</h2>
+    <p>Ugyanúgy ejtjük őket, ezért a szavak írásmódját meg kell tanulni. Sokat segít a <strong>szócsalád</strong>: ha tudod, hogy <em>folyik</em>, akkor <em>folyó</em> és <em>folyosó</em> is ly-os.</p>
+    <p><a href="j-vagy-ly/">A j és az ly szabálya, szólistákkal →</a></p>
+  </section>
+</main>
+
+<footer class="wrap small">
+  Nincs reklám, nem gyűjtünk személyes adatot. © Betűvadász
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

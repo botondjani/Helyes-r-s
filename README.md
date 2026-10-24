@@ -12,4 +12,7 @@ Webes gyakorlóplatform gyerekeknek, elsőként helyesírással (1–8. osztály
   - [Szerver nélküli ötletek](docs/kutatas/szerver-nelkuli-otletek.md)
 
 ## Állapot
-Validációs fázis: a következő lépések és a döntési kapuk az üzleti terv 12. és 13. fejezetében vannak.
+**Validációs fázis (2026. okt. 26. – dec. 5.):** teendők és döntési kapuk: [docs/validacio/](docs/validacio/README.md).
+
+## Weboldal (`site/`)
+Statikus fake-door oldal: ingyenes, 10 feladatos j/ly gyakorló „értesíts” gombbal, és egy SEO-oldal (`site/j-vagy-ly/`). Élesítés előtt az `app.js`-ben a `WAITLIST_URL`-t a várólista-űrlap címére kell állítani. Helyben megnyitható: `site/index.html`.
